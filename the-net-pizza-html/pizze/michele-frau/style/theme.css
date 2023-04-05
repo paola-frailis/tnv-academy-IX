@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Roboto&display=swap');
+
+:root {
+    --primary: #F2B807;
+    --secondary: #F20505;
+    --accent1: #0BB5D9;
+    --accent2: #00748C;
+}
+
+header {
+    background-image: url('../images/pizza-ortolana-jpeg.jpg');
+    background-size: cover;
+    background-position-y: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header h1,
+header p {
+    color: var(--accent1);
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--primary);
+    text-align: center;
+}
+
+header p {
+    font-family: 'Pacifico', cursive;
+}
+
+header h1 {
+    font-size: 100px;
+    margin: 0;
+    text-shadow: 3px 3px 3px black;
+}
+
+header p {
+    font-size: 40px;
+    text-shadow: 3px 3px 3px black;
+}
+
+.container {
+    width: 900px;
+    margin: 0px auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 0px 8px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 2px 2px 4px lightgray;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-right: 16px;
+}
+
+.card a {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 2px 2px 4px lightgray;
+}
+.paragrafo {
+    text-align: center;
+}
