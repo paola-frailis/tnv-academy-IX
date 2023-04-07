@@ -5,7 +5,7 @@ const renderSection = (sectionName, sectionId, piatti) => {
     const newPiatti = [];
     while(newPiatti.length < 3) {
         const randomNumber = getRandomInt(13);
-        if(!newPiatti.includes(piatti[randomNumber])) {
+        if(!newPiatti.find(x => x.id === piatti[randomNumber].id)) {
             newPiatti.push(piatti[randomNumber]);
         }
     }    
