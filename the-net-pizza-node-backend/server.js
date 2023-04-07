@@ -21,4 +21,4 @@ try {
 }
 
 // Use { alter: true } to enable schema update
-db.sync({ alter: true });
+db.sync();
