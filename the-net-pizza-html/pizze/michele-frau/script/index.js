@@ -24,7 +24,7 @@ const renderMenu = (piatti) => {
     renderSection('Dolci consigliti', 'dolci', piatti);
 }
 
-fetch('http://my-json-server.typicode.com/michelefenu/tnv-academy-IX/piatti')
+fetch('https://my-json-server.typicode.com/michelefenu/tnv-academy-IX/piatti')
     .then(res => res.json())
     .then(res => renderMenu(res))
     .catch(err => console.log('è presente un errore'));
