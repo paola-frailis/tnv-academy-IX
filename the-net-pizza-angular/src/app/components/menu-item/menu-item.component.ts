@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Piatto } from '../../@models/piatto';
 
 
@@ -10,4 +10,9 @@ import { Piatto } from '../../@models/piatto';
 })
 export class MenuItemComponent {
   @Input() piatto: Partial<Piatto> = {};
+  @Output() delete = new EventEmitter();
+
+  onClick(id: number = -1) {
+    this.delete.emit(id);
+  }
 }

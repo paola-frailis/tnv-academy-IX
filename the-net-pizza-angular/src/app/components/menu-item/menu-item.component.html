@@ -13,4 +13,7 @@
       {{ piatto.description }}
     </p>
   </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="onClick(piatto.id)">Elimina</button>
+  </mat-card-actions>
 </mat-card>

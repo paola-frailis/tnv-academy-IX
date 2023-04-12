@@ -5,9 +5,15 @@
       <div class="separator"></div>
     </div>
   </div>
+  <div class="row mt-5">
+    <app-menu-filter class="col-12" (search)="onSearch($event)"></app-menu-filter>
+  </div>
+  <div *ngIf="menuSections.length === 0">Non ci sono risultati, modifica la ricerca</div>
   <section class="menu">
-    <app-menu-section [menuItems]="menuService.piattiAntipasti" sectionName="antipasti"></app-menu-section>
-    <app-menu-section [menuItems]="menuService.piattiPrimi" sectionName="primi"></app-menu-section>
-    <app-menu-section [menuItems]="menuService.piattiDolci" sectionName="dolci"></app-menu-section>
+    <app-menu-section
+      *ngFor="let menuSection of menuSections"
+      [menuItems]="menuSection"
+      (deleteItem)="onDeleteItem($event)"
+    ></app-menu-section>
   </section>
 </div>

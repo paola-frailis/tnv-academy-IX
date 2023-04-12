@@ -16,6 +16,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AngularMaterialModule } from './@shared/angular-material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PiattoDetailComponent } from './components/piatto-detail/piatto-detail.component';
+import { PageMenuComponent } from './components/page-menu/page-menu.component';
+import { MenuFilterComponent } from './components/menu-filter/menu-filter.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,16 @@ import { PiattoDetailComponent } from './components/piatto-detail/piatto-detail.
     FooterComponent,
     ContactsComponent,
     PiattoDetailComponent,
+    PageMenuComponent,
+    MenuFilterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

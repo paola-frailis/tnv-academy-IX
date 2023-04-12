@@ -7,9 +7,8 @@ import { Piatto } from '../@models/piatto';
 })
 export class MenuService {
   menu: Piatto[] = [];
-  piattiAntipasti: Piatto[] = [];
-  piattiPrimi: Piatto[] = [];
-  piattiDolci: Piatto[] = [];
+
+  API_ROOT = 'http://localhost:1234/api';
 
   constructor(private httpClient: HttpClient) {
     this.getMenu();
@@ -18,23 +17,26 @@ export class MenuService {
   getMenu() {
     this.httpClient
       .get<Piatto[]>(
-        'https://my-json-server.typicode.com/michelefenu/tnv-academy-IX/piatti/'
+        `${this.API_ROOT}/piatti/`
       )
       .subscribe({
         next: (response) => {
           this.menu = response;
-          this.piattiAntipasti = this.menu.filter(
-            (x) => x.category === 'antipasti'
-          );
-          this.piattiPrimi = this.menu.filter((x) => x.category === 'primi');
-          this.piattiDolci = this.menu.filter((x) => x.category === 'dolci');
         },
       });
   }
 
   getPiatto(id: string) {
     return this.httpClient.get<Piatto>(
-      `https://my-json-server.typicode.com/michelefenu/tnv-academy-IX/piatti/${id}`
+      `${this.API_ROOT}/piatti/${id}`
     );
+  }
+
+  deletePiatto(id: number) {
+    this.httpClient.delete(
+      `${this.API_ROOT}/piatti/${id}`
+    ).subscribe({
+      next: () => this.menu = this.menu.filter(x => x.id !== id)
+    });
   }
 }
