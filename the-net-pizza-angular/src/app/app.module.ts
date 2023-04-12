@@ -3,19 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HeroContentComponent } from './hero-content/hero-content.component';
-import { MenuComponent } from './menu/menu.component';
-import { MenuSectionComponent } from './menu-section/menu-section.component';
-import { MenuItemComponent } from './menu-item/menu-item.component';
-import { FooterComponent } from './footer/footer.component';
-import { ContactsComponent } from './contacts/contacts.component';
+
+import { ContactsComponent } from './components/contacts/contacts.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon'; 
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card'; 
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HeroContentComponent } from './components/hero-content/hero-content.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { MenuSectionComponent } from './components/menu-section/menu-section.component';
+import { MenuItemComponent } from './components/menu-item/menu-item.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AngularMaterialModule } from './@shared/angular-material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { PiattoDetailComponent } from './components/piatto-detail/piatto-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,15 +27,14 @@ import {MatCardModule} from '@angular/material/card';
     MenuItemComponent,
     FooterComponent,
     ContactsComponent,
+    PiattoDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule
+    HttpClientModule,
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent],
