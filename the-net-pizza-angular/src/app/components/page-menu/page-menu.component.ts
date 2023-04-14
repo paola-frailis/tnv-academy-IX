@@ -9,7 +9,7 @@ import { MenuService } from 'src/app/services/menu.service';
 export class PageMenuComponent {
 
   constructor(public menuService: MenuService) {
-    
+
   }
 
   onDeleteItem(id: number) {

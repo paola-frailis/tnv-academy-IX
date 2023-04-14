@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card [class.not-available]="!piatto.available">
   <img
     mat-card-image
     [src]="piatto.imageUrl"
@@ -15,5 +15,6 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-button (click)="onClick(piatto.id)">Elimina</button>
+    <button mat-button [routerLink]="['/edit', piatto.id]">Modifica</button>
   </mat-card-actions>
 </mat-card>

@@ -16,9 +16,11 @@ export class MenuComponent implements OnChanges {
   searchString = '';
 
 
-  constructor() {}
+  constructor() {
 
-  ngOnChanges(changes: SimpleChanges): void {
+  }
+
+  ngOnChanges(): void {
     this.filterMenu();
   }
 

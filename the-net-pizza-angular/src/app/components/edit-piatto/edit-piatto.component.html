@@ -1,0 +1,104 @@
+<h2 *ngIf="!isEditMode">Aggiungi un nuovo piatto</h2>
+<h2 *ngIf="isEditMode">Modifica {{ piatto.title }}</h2>
+
+<form #f="ngForm" >
+  <div class="row mx-5">
+    <div class="row">
+      <mat-form-field class="col-sm-12 col-md-4 mt-5">
+        <mat-label>Categoria</mat-label>
+        <select [(ngModel)]="piatto.category" name="category"  matNativeControl>
+          <option value="antipasti">Antipasti</option>
+          <option value="primi">Primi</option>
+          <option value="secondi">Secondi</option>
+          <option value="dolci">Dolci</option>
+          <option value="bibite">Bibite</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="col-sm-12 col-md-4">
+        <mat-label>Nome del piatto</mat-label>
+        <input [(ngModel)]="piatto.title" name="title" matInput />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="col-sm-12 col-md-4">
+        <mat-label>Descrizione</mat-label>
+        <textarea [(ngModel)]="piatto.description" name="description" matInput></textarea>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="col-sm-12 col-md-4">
+        <mat-label>Url immagine</mat-label>
+        <input [(ngModel)]="piatto.imageUrl" name="imageUrl" matInput  />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="col-sm-12 col-md-4">
+        <mat-label>Prezzo</mat-label>
+        <input [(ngModel)]="piatto.price" name="price" matInput />
+      </mat-form-field>
+    </div>
+    <div class="row mb-5">
+      <div class="col-sm-12 col-md-4">
+        <mat-slide-toggle [(ngModel)]="piatto.available" name="available">Disponibile</mat-slide-toggle>
+      </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-4">
+          <button *ngIf="!isEditMode" mat-flat-button color="primary" (click)="addPiatto()" >Crea Piatto</button>
+          <button *ngIf="isEditMode" mat-flat-button color="primary" (click)="editPiatto()">Modifica Piatto</button>
+        </div>
+      </div>
+  </div>
+</form>
+
+<!-- <form #f="ngForm" (ngSubmit)="onNgSubmit(f)">
+    <div class="row mx-5">
+      <div class="row">
+        <mat-form-field class="col-sm-12 col-md-4 mt-5">
+          <mat-label>Categoria</mat-label>
+          <select [ngModel] name="category"  matNativeControl>
+            <option value="primi">Primi</option>
+            <option value="secondi">Secondi</option>
+            <option value="dolci">Dolci</option>
+            <option value="bibite">Bibite</option>
+          </select>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-12 col-md-4">
+          <mat-label>Nome del piatto</mat-label>
+          <input [ngModel] name="title" matInput />
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-12 col-md-4">
+          <mat-label>Descrizione</mat-label>
+          <textarea [ngModel] name="description" matInput></textarea>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-12 col-md-4">
+          <mat-label>Url immagine</mat-label>
+          <input [ngModel] name="imageUrl" matInput  />
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-12 col-md-4">
+          <mat-label>Prezzo</mat-label>
+          <input [ngModel] name="price" matInput />
+        </mat-form-field>
+      </div>
+      <div class="row mb-5">
+        <div class="col-sm-12 col-md-4">
+          <mat-slide-toggle [ngModel] name="available">Disponibile</mat-slide-toggle>
+        </div>
+      </div>
+      <div class="row mb-5">
+          <div class="col-4">
+            <button mat-flat-button color="primary" type="submit">Crea Piatto</button>
+          </div>
+        </div>
+    </div>
+  </form> -->

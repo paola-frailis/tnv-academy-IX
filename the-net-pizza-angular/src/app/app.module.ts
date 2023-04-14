@@ -18,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PiattoDetailComponent } from './components/piatto-detail/piatto-detail.component';
 import { PageMenuComponent } from './components/page-menu/page-menu.component';
 import { MenuFilterComponent } from './components/menu-filter/menu-filter.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditPiattoComponent } from './components/edit-piatto/edit-piatto.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     PiattoDetailComponent,
     PageMenuComponent,
     MenuFilterComponent,
+    EditPiattoComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     AngularMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
